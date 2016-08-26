@@ -2,7 +2,7 @@
 var apiBaseUrl = "http://api.mineskin.org";
 var websiteBaseUrl = "http://mineskin.org";
 
-var mineskinApp = angular.module("mineskinApp", ["ngRoute", "ui.bootstrap", "ngLocationUpdate", "ngFileUpload"]);
+var mineskinApp = angular.module("mineskinApp", ["ngRoute", "ui.bootstrap", "ngLocationUpdate", "ngFileUpload", "ngCookies"]);
 
 mineskinApp.directive("ngPreloadSrc", function () {
     return {
@@ -28,14 +28,15 @@ mineskinApp.directive("ngPreloadSrc", function () {
 
 // Based on https://gist.github.com/Shoen/6350967
 mineskinApp.directive('twitter', ["$timeout",
-    function($timeout) {
+    function ($timeout) {
         return {
-            link: function(scope, element, attr) {
-                $timeout(function() {
+            link: function (scope, element, attr) {
+                $timeout(function () {
                     twttr.widgets.createShareButton(
                         attr.url,
                         element[0],
-                        function(el) {}, {
+                        function (el) {
+                        }, {
                             count: 'none',
                             text: attr.text
                         }
@@ -235,7 +236,7 @@ mineskinApp.controller("generatorController", ["$scope", "Upload", "$location", 
     };
 }]);
 
-mineskinApp.controller("galleryController", ["$scope", "$routeParams", "$location", "$http", function ($scope, $routeParams, $location, $http) {
+mineskinApp.controller("galleryController", ["$scope", "$routeParams", "$location", "$http", "$cookies", function ($scope, $routeParams, $location, $http, $cookies) {
     $scope.head.pageTitle = "Gallery | MineSkin";
 
     // To keep track of reloads (new-loads), since the pagination seems to reset the route-param back to its default value
@@ -279,9 +280,17 @@ mineskinApp.controller("galleryController", ["$scope", "$routeParams", "$locatio
             $scope.reloadGallery();
         }
     };
+    $scope.getLastSkinCookie = function () {
+        var id = $cookies.get("lastSkinId");
+        if (!id) {
+            $cookies.put("lastSkinId", "0");
+            return 0;
+        }
+        return id;
+    };
 }]);
 
-mineskinApp.controller("viewController", ["$scope", "$routeParams", "$location", "$http", function ($scope, $routeParams, $location, $http) {
+mineskinApp.controller("viewController", ["$scope", "$routeParams", "$location", "$http", "$cookies", function ($scope, $routeParams, $location, $http, $cookies) {
     $scope.skin = undefined;
     $http({
         url: apiBaseUrl + "/get/id/" + $routeParams.id,
@@ -292,6 +301,8 @@ mineskinApp.controller("viewController", ["$scope", "$routeParams", "$location",
 
             $scope.head.pageTitle = ($scope.skin.name || '#' + $scope.skin.id) + " | MineSkin";
             $scope.head.pageIcon = apiBaseUrl + "/render/" + $scope.skin.id + "/head";
+
+            $cookies.put("lastSkinId", $scope.skin.id.toString());
         });
     });
 }]);
@@ -355,6 +366,12 @@ mineskinApp.controller("skinController", ["$scope", "$timeout", "$location", "$h
         });
     };
     /* -Stats */
+
+    $scope.browser = {
+        isFirefox: function () {
+            return (navigator.userAgent.indexOf('Firefox') > -1);
+        }
+    };
 
     $scope.navigateTo = function (path) {
         $location.path(path);

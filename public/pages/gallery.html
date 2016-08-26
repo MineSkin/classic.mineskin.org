@@ -1,3 +1,18 @@
+<style>
+    /*
+    * Based on http://stackoverflow.com/a/14260175/6257838
+    */
+    .skull-image {
+        -webkit-filter: drop-shadow(8px 8px 6px rgba(0, 0, 0, 0.5));
+        filter: url(shadow.svg#drop-shadow)
+    }
+
+    .skull-image.new-image {
+        -webkit-filter: drop-shadow(8px 8px 6px rgba(0, 150, 20, 0.6));
+        filter: url(shadow.svg#drop-shadow)
+    }
+</style>
+
 <div class="pull-right form-inline">
     <button class="btn btn-primary" ng-click="navigateTo('/')">Generate New</button>
 
@@ -23,7 +38,7 @@
     <div>
         <span ng-repeat="skin in skins" class="galleryImage" title="{{skin.name || '#' + skin.id}}">
         <a href="#/{{skin.id}}">
-            <img src="/img/ajax-loader.gif" ng-preload-src="https://mineskin-api.inventivetalent.org/render/head?url={{skin.url}}">
+            <img ng-class="{'skull-image': !browser.isFirefox(), 'new-image': (getLastSkinCookie() < skin.id)}" src="/img/ajax-loader.gif" ng-preload-src="https://mineskin-api.inventivetalent.org/render/head?url={{skin.url}}">
         </a>
         </span>
     </div>
