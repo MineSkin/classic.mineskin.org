@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html ng-app="mineskinApp" ng-controller="skinController">
 <head>
-    <title ng-bind="head.pageTitle">MineSkin</title>
-    <link id="favicon" rel="shortcut icon" type="image/png" href="{{head.pageIcon || '/favicon.png'}}"/>
+    <?php
+    $userAgent = $_SERVER["HTTP_USER_AGENT"];
 
-    <!-- SEO -->
-    <meta name="keywords" content="mineskin,skin,skull,generator,custom,head,skin,minecraft,player,playerhead,skulls,customskull,spigot,bukkit,generator,api,customblocks">
-    <meta name="description" content="{{head.pageDescription}}">
-    <meta name="author" content="inventivetalent">
+    if (preg_match("/(facebookexternalhit|Twitterbot|Pinterest|Google.*snippet)/i",$userAgent)) {
+        include("default_seo.php");
+    }else{
+        ?>
+        <title ng-bind="head.pageTitle">MineSkin</title>
+        <link id="favicon" rel="shortcut icon" type="image/png" href="{{head.pageIcon || '/favicon.png'}}"/>
 
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="{{head.pageTitle || 'MineSkin'}}">
-    <meta property="og:image" content="{{head.pageIcon || '/favicon.png'}}">
-    <meta property="og:description" content="{{head.pageDescription}}">
+        <!-- SEO -->
+        <meta name="keywords" content="mineskin,skin,skull,generator,custom,head,skin,minecraft,player,playerhead,skulls,customskull,spigot,bukkit,generator,api,customblocks">
+        <meta name="description" content="{{head.pageDescription}}">
+        <meta name="author" content="inventivetalent">
 
-    <meta property="twitter:title" content="{{head.pageTitle || 'MineSkin'}}">
-    <meta property="twitter:image" content="{{head.pageIcon || '/favicon.png'}}">
-    <meta property="twitter:description" content="{{head.pageDescription}}">
-    <meta property="twitter:site" content="@MineSkinOrg">
-    <meta property="twitter:creator" content="@Inventivtalent">
-    <meta property="twitter:card" content="summary">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="{{head.pageTitle || 'MineSkin'}}">
+        <meta property="og:image" content="{{head.pageIcon || '/favicon.png'}}">
+        <meta property="og:description" content="{{head.pageDescription}}">
+
+        <meta property="twitter:title" content="{{head.pageTitle || 'MineSkin'}}">
+        <meta property="twitter:image" content="{{head.pageIcon || '/favicon.png'}}">
+        <meta property="twitter:description" content="{{head.pageDescription}}">
+        <meta property="twitter:site" content="@MineSkinOrg">
+        <meta property="twitter:creator" content="@Inventivtalent">
+        <meta property="twitter:card" content="summary">
+        <?php
+    }
+    ?>
 
 
     <!-- Style -->
