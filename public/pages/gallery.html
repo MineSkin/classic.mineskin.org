@@ -1,0 +1,35 @@
+<div class="pull-right form-inline">
+    <button class="btn btn-primary" ng-click="navigateTo('/')">Generate New</button>
+
+    &nbsp;
+
+    <div class="form-group">
+        <form>
+            <input type="text" class="form-control" placeholder="Search..." ng-model="searchQuery">
+            <button type="submit" class="btn btn-success" ng-click="reloadGallery()"><span class="glyphicon glyphicon-search"></span></button>
+        </form>
+    </div>
+</div>
+
+
+<h2>Skin Gallery
+    <small>{{'Page #' + pagination.page}}</small>
+</h2>
+
+<div ng-init="galleryInit()">
+    <div ng-show="skins.length === 0">
+        <h3>No Skins Found :(</h3>
+    </div>
+    <div>
+        <span ng-repeat="skin in skins" class="galleryImage" title="{{skin.name || '#' + skin.id}}">
+        <a href="#/{{skin.id}}">
+            <img src="/img/ajax-loader.gif" ng-preload-src="https://mineskin-api.inventivetalent.org/render/head?url={{skin.url}}">
+        </a>
+        </span>
+    </div>
+
+    <div class="text-center">
+        <hr/>
+        <ul uib-pagination ng-show="pagination.totalItems > 0" items-per-page="pagination.itemsPerPage" total-items="pagination.totalItems" ng-model="pagination.page" max-size="pagination.maxSize" class="pagination pagination-centered" boundary-links="true" force-ellipses="true" rotate="true" ng-change="pageChanged()"></ul>
+    </div>
+</div>

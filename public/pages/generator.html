@@ -1,0 +1,63 @@
+<div class="pull-right">
+    <button class="btn btn-primary" ng-click="navigateTo('/gallery')">Explore the Gallery</button>
+</div>
+
+<h2>Generate New</h2>
+
+<div>
+    <h3>Select Skin</h3>
+
+    <div ng-show="!skinUpload && !skinUser">
+        <br/>
+        <label for="skinUrl" class="required-label">Image URL</label>
+        <input type="url" id="skinUrl" class="form-control" ng-model="skinUrl" ng-required="!skinUpload && !skinUser">
+    </div>
+    <div ng-show="!skinUrl && !skinUser">
+        <br/>
+        <label for="skinUpload" class="required-label">Upload Image</label>
+        <!--<input type="file" id="skinUpload" class="form-control" ng-model="skinUpload" ng-required="!skinUrl && !skinUser">-->
+        <div ngf-drop ng-model="skinUpload" class="drop-box">
+            <button type="file" ngf-select class="btn" id="skinUpload" name="file" ng-model="skinUpload" ngf-pattern="'image/png'" ngf-accept="'image/png'" ngf-max-size="10MB" ngf-min-width="64" ngf-min-height="32">Select File</button>
+            <br/>
+            <div ng-show="skinUpload" style="padding-top: 4px;">
+                <img ngf-thumbnail="skinUpload" class="thumb">
+                <button class="btn btn-danger" ng-click="skinUpload=null;">X</button>
+            </div>
+        </div>
+    </div>
+    <div ng-show="!skinUrl && !skinUpload">
+        <br/>
+        <label for="skinUser" class="required-label">Minecraft Username</label>
+        <input type="text" id="skinUser" class="form-control" ng-model="skinUser" ng-required="!skinUrl && !skinUpload" ng-minlength="4" ng-maxlength="36">
+    </div>
+</div>
+<hr/>
+<div ng-init="refreshTimeout()">
+    <h3>Options</h3>
+
+    <div>
+        <label for="skinName">Skin Name</label>
+        <input type="text" id="skinName" class="form-control" ng-model="skinName" placeholder="(optional)">
+    </div>
+    <div>
+        <label for="skinModel">Skin Model</label>
+        <select id="skinModel" class="form-control" ng-model="skinModel" value="steve">
+            <option value="steve">Classic (Steve)</option>
+            <option value="slim">Slim (Alex)</option>
+        </select>
+    </div>
+    <br/>
+    <div>
+        <input type="checkbox" id="privateUpload" ng-model="privateUpload">
+        <label for="privateUpload">Private</label>
+        <span class="help-block">The skin won't be visible in the gallery</span>
+    </div>
+
+    <br/>
+    <hr/>
+
+    <div>
+        <button class="btn btn-success" ng-disabled="generatorTimeout > 0 || (!skinUrl && !skinUpload && !skinUser)" ng-click="generate()">Generate!</button>
+        <span class="help-block" ng-show="generatorTimeout > 0">Please wait {{generatorTimeout}} more second(s)...</span>
+    </div>
+</div>
