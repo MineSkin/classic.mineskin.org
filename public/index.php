@@ -2,7 +2,7 @@
 <html ng-app="mineskinApp" ng-controller="skinController">
 <head>
     <title ng-bind="head.pageTitle">MineSkin</title>
-    <link id="favicon" rel="shortcut icon" type="image/png" href="{{head.pageIcon || 'favicon.png'}}"/>
+    <link id="favicon" rel="shortcut icon" type="image/png" href="{{head.pageIcon || '/favicon.png'}}"/>
 
     <!-- SEO -->
     <meta name="keywords" content="mineskin,skin,skull,generator,custom,head,skin,minecraft,player,playerhead,skulls,customskull,spigot,bukkit,generator,api,customblocks">
@@ -11,11 +11,11 @@
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="{{head.pageTitle || 'MineSkin'}}">
-    <meta property="og:image" content="{{head.pageIcon || 'favicon.png'}}">
+    <meta property="og:image" content="{{head.pageIcon || '/favicon.png'}}">
     <meta property="og:description" content="{{head.pageDescription}}">
 
     <meta property="twitter:title" content="{{head.pageTitle || 'MineSkin'}}">
-    <meta property="twitter:image" content="{{head.pageIcon || 'favicon.png'}}">
+    <meta property="twitter:image" content="{{head.pageIcon || '/favicon.png'}}">
     <meta property="twitter:description" content="{{head.pageDescription}}">
     <meta property="twitter:site" content="@MineSkinOrg">
     <meta property="twitter:creator" content="@Inventivtalent">
@@ -77,7 +77,7 @@
 <script src="/js/ng-file-upload.min.js"></script>
 
 <?php
-echo '<script src="script.js?' . rand() . '"></script>';
+echo '<script src="/script.js?' . rand() . '"></script>';
 ?>
 </body>
 </html>
