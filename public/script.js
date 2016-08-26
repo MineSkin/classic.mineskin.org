@@ -246,7 +246,7 @@ mineskinApp.controller("galleryController", ["$scope", "$routeParams", "$locatio
     $scope.pagination = {
         page: 0,
         totalItems: 0,
-        itemsPerPage: 32,
+        itemsPerPage: 28,
         maxSize: 4
     };
     $scope.skins = [];
