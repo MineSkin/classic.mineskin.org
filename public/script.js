@@ -49,16 +49,16 @@ mineskinApp.config(function ($routeProvider) {
 
     $routeProvider
         .when("/", {
-            templateUrl: "pages/generator.html",
+            templateUrl: "/pages/generator.html",
             controller: "generatorController"
         })
         .when("/gallery", {redirectTo: "/gallery/1"})
         .when("/gallery/:page?", {
-            templateUrl: "pages/gallery.html",
+            templateUrl: "/pages/gallery.html",
             controller: "galleryController"
         })
         .when("/:id", {
-            templateUrl: "pages/view.html",
+            templateUrl: "/pages/view.html",
             controller: "viewController"
         });
 
