@@ -328,7 +328,8 @@ mineskinApp.controller("skinController", ["$scope", "$timeout", "$location", "$h
     /* +Head */
     $scope.head = {
         pageTitle: "MineSkin",
-        pageIcon: "favicon.png"
+        pageIcon: "favicon.png",
+        pageDescription: "Generate custom Minecraft Skins & Skulls from images"
     };
     /* -Head */
 

@@ -1,8 +1,26 @@
 <!DOCTYPE html>
 <html ng-app="mineskinApp" ng-controller="skinController">
 <head>
-    <title>{{head.pageTitle || 'MineSkin'}}</title>
+    <title ng-bind="head.pageTitle">MineSkin</title>
     <link id="favicon" rel="shortcut icon" type="image/png" href="{{head.pageIcon || 'favicon.png'}}"/>
+
+    <!-- SEO -->
+    <meta name="keywords" content="mineskin,skin,skull,generator,custom,head,skin,minecraft,player,playerhead,skulls,customskull,spigot,bukkit,generator,api,customblocks">
+    <meta name="description" content="{{head.pageDescription}}">
+    <meta name="author" content="inventivetalent">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{head.pageTitle || 'MineSkin'}}">
+    <meta property="og:image" content="{{head.pageIcon || 'favicon.png'}}">
+    <meta property="og:description" content="{{head.pageDescription}}">
+
+    <meta property="twitter:title" content="{{head.pageTitle || 'MineSkin'}}">
+    <meta property="twitter:image" content="{{head.pageIcon || 'favicon.png'}}">
+    <meta property="twitter:description" content="{{head.pageDescription}}">
+    <meta property="twitter:site" content="@MineSkinOrg">
+    <meta property="twitter:creator" content="@Inventivtalent">
+    <meta property="twitter:card" content="summary">
+
 
     <!-- Style -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
