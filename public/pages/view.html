@@ -66,6 +66,9 @@ SkullOwner:{
 
     <hr/>
 
+    <div class="pull-left">
+        {{skin.views}} views
+    </div>
     <div class="pull-right">
         <div ng-show="skin.accountId > 0 && skin.timestamp > 0" class="text-muted">
             Generated on {{(skin.timestamp | date : "medium")}} by account #{{skin.accountId}}
