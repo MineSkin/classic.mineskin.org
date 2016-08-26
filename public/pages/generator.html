@@ -60,4 +60,23 @@
         <button class="btn btn-success" ng-disabled="generatorTimeout > 0 || (!skinUrl && !skinUpload && !skinUser)" ng-click="generate()">Generate!</button>
         <span class="help-block" ng-show="generatorTimeout > 0">Please wait {{generatorTimeout}} more second(s)...</span>
     </div>
+
+    <hr/>
+
+    <div>
+        <p>
+            This tool allows you to generate valid Minecraft skin data from texture images.
+            <br/>
+            It was originally designed to generate <strong>skull/head textures</strong>, but you can also use it to generate <strong>full skins</strong> if you provide a complete texture.
+        </p>
+
+        <a target="_blank" href="https://www.spigotmc.org/threads/164209">SpigotMC thread</a>
+        <br/>
+        <a target="_blank" href="https://github.com/inventivetalentDev/CustomSkullClient">Java API Client (GitHub)</a>
+        <br/>
+        <a target="_blank" href="https://r.spiget.org/25417">CustomSkins plugin (Spigot)</a>
+        <br/>
+        <a target="_blank" href="https://r.spiget.org/6478">CustomBlocks plugin (Spigot)</a>
+
+    </div>
 </div>
