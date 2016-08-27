@@ -28,7 +28,7 @@
     <div ng-show="!skinUrl && !skinUpload">
         <br/>
         <label for="skinUser" class="required-label">Minecraft Username</label>
-        <input type="text" id="skinUser" class="form-control" ng-model="skinUser" ng-required="!skinUrl && !skinUpload" ng-minlength="4" ng-maxlength="36">
+        <input type="text" id="skinUser" class="form-control" ng-model="skinUser" ng-required="!skinUrl && !skinUpload" ng-minlength="4" ng-maxlength="36" ng-change="skinName = skinUser">
     </div>
 </div>
 <hr/>
