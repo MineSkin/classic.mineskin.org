@@ -38,7 +38,7 @@
     <div>
         <span ng-repeat="skin in skins" class="galleryImage" title="{{skin.name || '#' + skin.id}}">
         <a href="#/{{skin.id}}">
-            <img ng-class="{'skull-image': !browser.isFirefox(), 'new-image': (getLastSkinCookie() < skin.id)}" src="/img/ajax-loader.gif" ng-preload-src="https://mineskin-api.inventivetalent.org/render/head?url={{skin.url}}">
+            <img ng-class="{'skull-image': !browser.isFirefox(), 'new-image': (getLastSkinCookie() < skin.id)}" src="/img/ajax-loader.gif" ng-preload-src="https://api.mineskin.org/render/head?url={{skin.url}}">
         </a>
         </span>
     </div>
