@@ -78,7 +78,7 @@
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js" integrity="sha384-V6/dyDFv85/V/Ktq3ez5B80/c9ZY7jV9c/319rqwNOz3h9CIPdd2Eve0UQBYMMr/" crossorigin="anonymous"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-cookies.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.1.1/ui-bootstrap.min.js" integrity="sha384-wdLJc2YyjuluHF3HVyjY3+6XbqHKHmlryPgblRIwxza9hLmxD9YJtWs16lUOIJB0" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.1.1/ui-bootstrap-tpls.min.js" integrity="sha384-WtvotrktirgylB2PB0Rmy8GyjqcT3ho9v1cyvjNZYLj8KZC1bsjfE8S4pniiFqyZ" crossorigin="anonymous"></script>
