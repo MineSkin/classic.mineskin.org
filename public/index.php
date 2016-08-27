@@ -88,7 +88,7 @@
 <script src="/js/ng-file-upload.min.js"></script>
 
 <?php
-echo '<script src="/script.js?' . rand() . '"></script>';
+echo '<script src="/script.min.js?' . rand() . '"></script>';
 ?>
 </body>
 </html>
