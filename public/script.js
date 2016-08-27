@@ -1,6 +1,6 @@
 // TODO: HTTPS
-var apiBaseUrl = "http://api.mineskin.org";
-var websiteBaseUrl = "http://mineskin.org";
+var apiBaseUrl = "https://api.mineskin.org";
+var websiteBaseUrl = "https://mineskin.org";
 
 var mineskinApp = angular.module("mineskinApp", ["ngRoute", "ui.bootstrap", "ngLocationUpdate", "ngFileUpload", "ngCookies"]);
 
