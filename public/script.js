@@ -1,4 +1,3 @@
-// TODO: HTTPS
 var apiBaseUrl = "https://api.mineskin.org";
 var websiteBaseUrl = "https://mineskin.org";
 
@@ -102,23 +101,6 @@ mineskinApp.controller("generatorController", ["$scope", "Upload", "$location", 
                     console.log(response);
                     $scope.generateError(response.data.error, genAlert);
                 });
-                // $.ajax({
-                //     url: apiBaseUrl + "/generate/url?name=" + $scope.skinName + "&model=" + $scope.skinModel + "&visibility=" + (privateUpload ? 1 : 0) + "&callback=?",
-                //     method: "POST",
-                //     type: "POST",
-                //     dataType: "jsonp",
-                //     success: function (data) {
-                //         if (!data.error) {
-                //             $scope.generateSuccess(data, genAlert);
-                //         } else {
-                //             $scope.generateError(data.error, genAlert);
-                //         }
-                //     },
-                //     error: function (error) {
-                //         console.log(error);
-                //         //TODO
-                //     }
-                // });
             }, 500);
         } else if ($scope.skinUpload) {
             var genAlert = $scope.addAlert("Uploading Skin...", "info", 10000);
@@ -159,23 +141,6 @@ mineskinApp.controller("generatorController", ["$scope", "Upload", "$location", 
                         console.log(response);
                         $scope.generateError(response.data.error, genAlert);
                     });
-                    // $.ajax({
-                    //     url: apiBaseUrl + "/generate/user/" + uuid + "?name=" + $scope.skinName + "&visibility=" + (privateUpload ? 1 : 0) + "&callback=?",
-                    //     method: "GET",
-                    //     type: "GET",
-                    //     dataType: "jsonp",
-                    //     success: function (data) {
-                    //         if (!data.error) {
-                    //             $scope.generateSuccess(data, genAlert);
-                    //         } else {
-                    //             $scope.generateError(data.error, genAlert);
-                    //         }
-                    //     },
-                    //     error: function (error) {
-                    //         console.log(error);
-                    //         //TODO
-                    //     }
-                    // });
                 }, 500);
             }
 
