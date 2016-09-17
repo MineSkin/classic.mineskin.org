@@ -38,6 +38,8 @@
     <link rel="stylesheet" href="https://spiget.org/css/sticky-footer.min.css">
 
     <meta name=viewport content="width=device-width, initial-scale=1">
+
+    <base href="/">
 </head>
 <body>
 

@@ -46,7 +46,7 @@ mineskinApp.directive('twitter', ["$timeout",
     }
 ]);
 
-mineskinApp.config(function ($routeProvider) {
+mineskinApp.config(function ($routeProvider, $locationProvider) {
 
     $routeProvider
         .when("/", {
@@ -63,6 +63,7 @@ mineskinApp.config(function ($routeProvider) {
             controller: "viewController"
         });
 
+    $locationProvider.html5Mode(true);
 });
 
 mineskinApp.controller("generatorController", ["$scope", "Upload", "$location", "$http", function ($scope, Upload, $location, $http) {
