@@ -8,10 +8,10 @@
     <h2>{{ skin.name || '#' + skin.id}}</h2>
 
     <div class="row">
-        <div class="col-md-3" style="min-width: 195px; min-height: 415px;">
+        <div class="col-md-3" style="min-width: 195px; min-height: 415px; z-index:1;">
             <img src="https://api.mineskin.org/render/skin?url={{skin.data.texture.url}}">
         </div>
-        <div class="col-md-9">
+        <div class="col-md-9" style="z-index:1;">
             <div class="form-group">
                 <label for="textureValue">Texture Value</label>
                 <input type="text" class="form-control" readonly id="textureValue" ng-model="skin.data.texture.value" select-on-click>
