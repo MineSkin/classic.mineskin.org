@@ -26,6 +26,14 @@
                 <label for="textureUrl">Texture URL</label>
                 <input type="text" class="form-control" readonly id="textureUrl" ng-model="skin.data.texture.url" select-on-click>
             </div>
+
+            <div class="form-group">
+                <hr>
+                <br>
+
+                <a href="https://minecraft.net/profile/skin/remote?url={{skin.data.texture.url}}" target="_blank">Use this Skin</a><br/>
+                <a href="{{skin.data.texture.url}}" target="_blank">Download Skin</a> (Right-Click &gt; Save as)
+            </div>
         </div>
 
         <div style="height: 415px; position: relative;">
