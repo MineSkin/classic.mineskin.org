@@ -66,7 +66,7 @@ mineskinApp.config(function ($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
 });
 
-mineskinApp.controller("generatorController", ["$scope", "Upload", "$location", "$http", function ($scope, Upload, $location, $http) {
+mineskinApp.controller("generatorController", ["$scope", "Upload", "$location", "$http", "$timeout", function ($scope, Upload, $location, $http, $timeout) {
     $scope.head.pageTitle = "MineSkin";
     $scope.head.pageIcon = "favicon.png";
 
@@ -200,6 +200,10 @@ mineskinApp.controller("generatorController", ["$scope", "Upload", "$location", 
             success: function (data) {
                 $scope.generatorDelay = data.delay;
                 $scope.generatorTimeout = data.nextRelative;
+
+                if ($scope.generatorTimeout >= 0) {
+                    $timeout($scope.refreshTimeout(), 1000);
+                }
             }
         });
     };
