@@ -212,7 +212,7 @@ mineskinApp.controller("generatorController", ["$scope", "Upload", "$location", 
                 $scope.generatorDelay = data.delay;
                 $scope.generatorTimeout = data.nextRelative;
 
-                if ($scope.generatorTimeout >= 0) {
+                if ($scope.generatorTimeout >= 0.1) {
                     $timeout($scope.refreshTimeout(), 1000);
                 }
             }
