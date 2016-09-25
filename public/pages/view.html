@@ -82,7 +82,7 @@ SkullOwner:{
     </div>
     <div class="pull-right">
         <div ng-show="skin.accountId > 0 && skin.timestamp > 0" class="text-muted">
-            Generated on {{(skin.timestamp | date : "medium")}} by account #{{skin.accountId}}
+            Generated on {{(skin.timestamp*1000 | date : "medium")}} by account #{{skin.accountId}}
         </div>
     </div>
 </div>
