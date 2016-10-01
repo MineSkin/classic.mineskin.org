@@ -39,7 +39,7 @@
         <h3>No Skins Found :(</h3>
     </div>
     <div>
-        <span ng-repeat="skin in skins" class="galleryImage" title="{{skin.name || '#' + skin.id}}">
+        <span ng-repeat="skin in skins" class="galleryImage" tooltip-placement="top" tooltip-class="skinTooltip" uib-tooltip="{{skin.name || '#' + skin.id}}">
         <a href="/{{skin.id}}">
             <img ng-class="{'skull-image': !browser.isFirefox(), 'new-image': (getLastSkinCookie() < skin.id)}" src="/img/loading.svg" ng-preload-src="https://api.mineskin.org/render/head?url={{skin.url}}">
         </a>
