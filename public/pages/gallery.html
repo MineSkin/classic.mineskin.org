@@ -30,7 +30,7 @@
 
 <div ng-init="galleryInit()">
     <div ng-show="skins.length === 0">
-        <h3>No Skins Found :(</h3>
+        <h3>Loading...</h3>
     </div>
     <div>
         <span ng-repeat="skin in skins" class="galleryImage" tooltip-placement="top" tooltip-class="skinTooltip" uib-tooltip="{{skin.name || '#' + skin.id}}">
