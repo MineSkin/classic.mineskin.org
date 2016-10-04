@@ -17,7 +17,7 @@
         <label for="skinUpload" class="required-label">Upload Image</label>
         <!--<input type="file" id="skinUpload" class="form-control" ng-model="skinUpload" ng-required="!skinUrl && !skinUser">-->
         <div ngf-drop ng-model="skinUpload" class="drop-box">
-            <button type="file" ngf-select class="btn" id="skinUpload" name="file" ng-model="skinUpload" ngf-pattern="'image/png'" ngf-accept="'image/png'" ngf-max-size="10MB" ngf-min-width="64" ngf-min-height="32">Select File</button>
+            <button type="file" ngf-select class="btn" id="skinUpload" name="file" ng-model="skinUpload" ngf-pattern="'image/png'" ngf-accept="'image/png'" ngf-max-size="16KB" ngf-min-width="64" ngf-min-height="32">Select File</button>
             <br/>
             <div ng-show="skinUpload" style="padding-top: 4px;">
                 <img ngf-thumbnail="skinUpload" class="thumb">
