@@ -231,7 +231,14 @@ mineskinApp.controller("galleryController", ["$scope", "$routeParams", "$locatio
     $scope.viewMode = $cookies.get("viewMode") || 0;// 0 = heads only; 1 = full skins
     $scope.toggleViewMode = function () {
         $scope.viewMode = 1 - $scope.viewMode;// Toggle 1/0
-        $cookies.put("viewMode", $scope.viewMode);
+
+        var now = new $window.Date();
+        var expires = new $window.Date(now.getFullYear(), now.getMonth() + 1, now.getDate());
+
+        $cookies.put("viewMode", $scope.viewMode, {
+            expires: expires
+        });
+
         location.reload();
     };
 
@@ -274,7 +281,12 @@ mineskinApp.controller("galleryController", ["$scope", "$routeParams", "$locatio
     $scope.getLastSkinCookie = function () {
         var id = $cookies.get("lastSkinId");
         if (!id) {
-            $cookies.put("lastSkinId", "0");
+            var now = new $window.Date();
+            var expires = new $window.Date(now.getFullYear(), now.getMonth() + 1, now.getDate());
+
+            $cookies.put("lastSkinId", "0", {
+                expires: expires
+            });
             return 0;
         }
         return id;
