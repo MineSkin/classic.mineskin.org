@@ -220,7 +220,7 @@ mineskinApp.controller("generatorController", ["$scope", "Upload", "$location", 
     };
 }]);
 
-mineskinApp.controller("galleryController", ["$scope", "$routeParams", "$location", "$http", "$cookies", "$window", function ($scope, $routeParams, $location, $http, $cookies, $window) {
+mineskinApp.controller("galleryController", ["$scope", "$routeParams", "$location", "$http", "$cookies", "$window", "$route", function ($scope, $routeParams, $location, $http, $cookies, $window, $route) {
     $scope.head.pageTitle = "Gallery | MineSkin";
     $scope.head.pageIcon = "favicon.png";
 
@@ -239,7 +239,7 @@ mineskinApp.controller("galleryController", ["$scope", "$routeParams", "$locatio
             expires: expires
         });
 
-        location.reload();
+        $route.reload();
     };
 
     $scope.pagination = {
