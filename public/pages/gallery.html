@@ -35,13 +35,31 @@
     <div>
         <span ng-repeat="skin in skins" class="galleryImage" tooltip-placement="top" tooltip-class="skinTooltip" uib-tooltip="{{skin.name || '#' + skin.id}}">
         <a href="/{{skin.id}}">
-            <img ng-class="{'skull-image': !browser.isFirefox(), 'new-image': (getLastSkinCookie() < skin.id)}" src="/img/loading.svg" ng-preload-src="https://api.mineskin.org/render/head?url={{skin.url}}">
+            <img ng-class="{'skull-image': !browser.isFirefox(), 'new-image': (getLastSkinCookie() < skin.id)}" src="/img/loading.svg" ng-preload-src="https://api.mineskin.org/render/{{viewMode == 0 ? 'head' : 'skin'}}?url={{skin.url}}">
         </a>
         </span>
+    </div>
+
+    <div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- mineskin.org responsive gallery -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-5730766216229938"
+             data-ad-slot="3854512400"
+             data-ad-format="auto"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
     </div>
 
     <div class="text-center">
         <hr/>
         <ul uib-pagination ng-show="pagination.totalItems > 0" items-per-page="pagination.itemsPerPage" total-items="pagination.totalItems" ng-model="pagination.page" max-size="pagination.maxSize" class="pagination pagination-centered" boundary-links="true" force-ellipses="true" rotate="true" boundary-link-numbers="true" ng-change="pageChanged()"></ul>
+    </div>
+    <div class="pull-right">
+        <button type="button" class="btn btn-primary" ng-click="toggleViewMode()">
+            Toggle View
+        </button>
     </div>
 </div>

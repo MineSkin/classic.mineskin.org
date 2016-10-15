@@ -228,6 +228,12 @@ mineskinApp.controller("galleryController", ["$scope", "$routeParams", "$locatio
     var newLoad = true;
 
     $scope.searchQuery = "";
+    $scope.viewMode = $cookies.get("viewMode") || 0;// 0 = heads only; 1 = full skins
+    $scope.toggleViewMode = function () {
+        $scope.viewMode = 1 - $scope.viewMode;// Toggle 1/0
+        $cookies.put("viewMode", $scope.viewMode);
+        location.reload();
+    };
 
     $scope.pagination = {
         page: 0,
