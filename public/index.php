@@ -4,7 +4,7 @@
     <?php
     $userAgent = $_SERVER["HTTP_USER_AGENT"];
 
-    if (preg_match("/(facebookexternalhit|Twitterbot|Pinterest|Google.*snippet)/i",$userAgent)) {
+    if (preg_match("/(facebookexternalhit|Twitterbot|Pinterest|Google.*snippet|Discordbot|Uptimerobot)/i",$userAgent)) {
         include("default_seo.php");
     }else{
         ?>
