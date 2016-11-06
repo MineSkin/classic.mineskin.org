@@ -4,9 +4,9 @@
     <?php
     $userAgent = $_SERVER["HTTP_USER_AGENT"];
 
-    if (preg_match("/(facebookexternalhit|Twitterbot|Pinterest|Google.*snippet|Discordbot|Uptimerobot)/i",$userAgent)) {
+    if (preg_match("/(facebookexternalhit|Twitterbot|Pinterest|Google.*snippet|Discordbot|Uptimerobot)/i", $userAgent)) {
         include("default_seo.php");
-    }else{
+    } else {
         ?>
         <title ng-bind="head.pageTitle">MineSkin - Custom Skin Generator</title>
         <link id="favicon" rel="shortcut icon" type="image/png" href="{{head.pageIcon || '/favicon.png'}}"/>
@@ -59,6 +59,11 @@
 
         <div id="mainContent" ng-view>
             <!-- Main Content -->
+            <noscript>
+                <h2 style="color:red;">Please enable Javascript to use this website!</h2>
+            </noscript>
+            <h3 class="text-muted">Dynamic page is loading...</h3>
+            <?php include("pages/generator.html"); ?>
         </div>
     </div>
 </div>
