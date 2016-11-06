@@ -78,7 +78,7 @@ mineskinApp.config(function ($routeProvider, $locationProvider) {
 });
 
 mineskinApp.controller("generatorController", ["$scope", "Upload", "$location", "$http", "$timeout", function ($scope, Upload, $location, $http, $timeout) {
-    $scope.head.pageTitle = "MineSkin";
+    $scope.head.pageTitle = "MineSkin - Custom Skin Generator";
     $scope.head.pageIcon = "favicon.png";
 
     $scope.skinUpload = undefined;
@@ -342,9 +342,9 @@ mineskinApp.controller("skinController", ["$scope", "$timeout", "$location", "$h
 
     /* +Head */
     $scope.head = {
-        pageTitle: "MineSkin",
+        pageTitle: "MineSkin - Custom Skin Generator",
         pageIcon: "favicon.png",
-        pageDescription: "Generate custom Minecraft Skins & Skulls from images"
+        pageDescription: "MineSkin.org allows you to generate skin texture data signed by Mojang."
     };
     /* -Head */
 
