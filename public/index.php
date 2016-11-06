@@ -8,7 +8,7 @@
         include("default_seo.php");
     }else{
         ?>
-        <title ng-bind="head.pageTitle">MineSkin</title>
+        <title ng-bind="head.pageTitle">MineSkin - Custom Skin Generator</title>
         <link id="favicon" rel="shortcut icon" type="image/png" href="{{head.pageIcon || '/favicon.png'}}"/>
 
         <!-- SEO -->
