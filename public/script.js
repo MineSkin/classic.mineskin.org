@@ -344,7 +344,7 @@ mineskinApp.controller("skinController", ["$scope", "$timeout", "$location", "$h
     $scope.head = {
         pageTitle: "MineSkin - Custom Skin Generator",
         pageIcon: "favicon.png",
-        pageDescription: "MineSkin.org allows you to generate skin texture data signed by Mojang."
+        pageDescription: "MineSkin.org allows you to generate skin texture data for Minecraft which is signed by Mojang."
     };
     /* -Head */
 
