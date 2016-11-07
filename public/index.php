@@ -40,6 +40,16 @@
     <meta name=viewport content="width=device-width, initial-scale=1">
 
     <base href="/">
+
+    <script type='application/ld+json'>
+{
+  "@context": "http://www.schema.org",
+  "@type": "WebSite",
+  "name": "MineSkin",
+  "url": "https://mineskin.org"
+}
+
+    </script>
 </head>
 <body>
 
