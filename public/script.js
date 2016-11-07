@@ -229,6 +229,10 @@ mineskinApp.controller("galleryController", ["$scope", "$routeParams", "$locatio
 
     $scope.searchQuery = "";
     $scope.viewMode = $cookies.get("viewMode") || 0;// 0 = heads only; 1 = full skins
+    $scope.resultType = $cookies.get("resultType");
+    if ($scope.resultType == undefined) {
+        $scope.resultType = "list";
+    }
     $scope.toggleViewMode = function () {
         $scope.viewMode = 1 - $scope.viewMode;// Toggle 1/0
 
@@ -236,6 +240,16 @@ mineskinApp.controller("galleryController", ["$scope", "$routeParams", "$locatio
         var expires = new $window.Date(now.getFullYear(), now.getMonth() + 1, now.getDate());
 
         $cookies.put("viewMode", $scope.viewMode, {
+            expires: expires
+        });
+
+        $route.reload();
+    };
+    $scope.resultTypeChanged = function () {
+        var now = new $window.Date();
+        var expires = new $window.Date(now.getFullYear(), now.getMonth() + 1, now.getDate());
+
+        $cookies.put("resultType", $scope.resultType, {
             expires: expires
         });
 
@@ -253,14 +267,14 @@ mineskinApp.controller("galleryController", ["$scope", "$routeParams", "$locatio
         console.log("reload gallery #" + $scope.pagination.page);
         $scope.skins = [];
         $http({
-            url: apiBaseUrl + "/get/list/" + $scope.pagination.page + "?size=" + $scope.pagination.itemsPerPage + ($scope.searchQuery ? "&filter=" + $scope.searchQuery : ""),
+            url: apiBaseUrl + "/get/" + $scope.resultType + "/" + $scope.pagination.page + "?size=" + $scope.pagination.itemsPerPage + ($scope.searchQuery ? "&filter=" + $scope.searchQuery : ""),
             method: "GET"
         }).then(function (response) {
             console.log(response);
             $scope.safeApply(function () {
                 $scope.skins = response.data.skins;
                 $scope.pagination.page = response.data.page.index;
-                $scope.pagination.totalItems = response.data.page.totalSkins;
+                $scope.pagination.totalItems = response.data.page.total;
                 newLoad = false;
             });
         });
