@@ -1,7 +1,7 @@
 var apiBaseUrl = "https://api.mineskin.org";
 var websiteBaseUrl = "https://mineskin.org";
 
-var mineskinApp = angular.module("mineskinApp", ["ngRoute", "ui.bootstrap", "ngLocationUpdate", "ngFileUpload", "ngCookies"]);
+var mineskinApp = angular.module("mineskinApp", ["ngRoute", "ui.bootstrap", "ngLocationUpdate", "ngFileUpload", "ngCookies", "updateMeta"]);
 
 mineskinApp.directive("ngPreloadSrc", function () {
     return {

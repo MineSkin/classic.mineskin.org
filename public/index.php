@@ -1,35 +1,32 @@
 <!DOCTYPE html>
 <html ng-app="mineskinApp" ng-controller="skinController">
 <head>
-    <?php
-    $userAgent = $_SERVER["HTTP_USER_AGENT"];
+    <title ng-bind="head.pageTitle">MineSkin - Custom Skin Generator</title>
+    <link id="favicon" rel="shortcut icon" type="image/png" href="{{head.pageIcon || '/favicon.png'}}"/>
 
-    if (preg_match("/(facebookexternalhit|Twitterbot|Pinterest|Google.*snippet|Discordbot|Uptimerobot)/i", $userAgent)) {
-        include("default_seo.php");
-    } else {
-        ?>
-        <title ng-bind="head.pageTitle">MineSkin - Custom Skin Generator</title>
-        <link id="favicon" rel="shortcut icon" type="image/png" href="{{head.pageIcon || '/favicon.png'}}"/>
+    <!-- SEO -->
+    <meta name="keywords" content="mineskin,skin,skull,generator,custom,head,skin,minecraft,player,playerhead,skulls,customskull,spigot,bukkit,generator,api,customblocks">
+    <meta name="description" content="MineSkin.org allows you to generate skin texture data for Minecraft which is signed by Mojang.">
+    <update-meta name="description" content="{{head.pageDescription}}"></update-meta>
+    <meta name="author" content="inventivetalent">
 
-        <!-- SEO -->
-        <meta name="keywords" content="mineskin,skin,skull,generator,custom,head,skin,minecraft,player,playerhead,skulls,customskull,spigot,bukkit,generator,api,customblocks">
-        <meta name="description" content="{{head.pageDescription}}">
-        <meta name="author" content="inventivetalent">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="MineSkin">
+    <update-meta property="og:title" content="{{head.pageTitle || 'MineSkin'}}"></update-meta>
+    <meta property="og:image" content="/favicon.png">
+    <update-meta property="og:image" content="{{head.pageIcon || '/favicon.png'}}"></update-meta>
+    <meta property="og:description" content="MineSkin.org allows you to generate skin texture data for Minecraft which is signed by Mojang.">
+    <update-meta property="og:description" content="{{head.pageDescription}}"></update-meta>
 
-        <meta property="og:type" content="website">
-        <meta property="og:title" content="{{head.pageTitle || 'MineSkin'}}">
-        <meta property="og:image" content="{{head.pageIcon || '/favicon.png'}}">
-        <meta property="og:description" content="{{head.pageDescription}}">
-
-        <meta property="twitter:title" content="{{head.pageTitle || 'MineSkin'}}">
-        <meta property="twitter:image" content="{{head.pageIcon || '/favicon.png'}}">
-        <meta property="twitter:description" content="{{head.pageDescription}}">
-        <meta property="twitter:site" content="@MineSkinOrg">
-        <meta property="twitter:creator" content="@Inventivtalent">
-        <meta property="twitter:card" content="summary">
-        <?php
-    }
-    ?>
+    <meta property="twitter:title" content="MineSkin">
+    <update-meta property="twitter:title" content="{{head.pageTitle || 'MineSkin'}}"></update-meta>
+    <meta property="twitter:image" content="/favicon.png">
+    <update-meta property="twitter:image" content="{{head.pageIcon || '/favicon.png'}}"></update-meta>
+    <meta property="twitter:description" content="MineSkin.org allows you to generate skin texture data for Minecraft which is signed by Mojang.">
+    <update-meta property="twitter:description" content="{{head.pageDescription}}"></update-meta>
+    <meta property="twitter:site" content="@MineSkinOrg">
+    <meta property="twitter:creator" content="@Inventivtalent">
+    <meta property="twitter:card" content="summary">
 
 
     <!-- Style -->
@@ -48,6 +45,7 @@
   "name": "MineSkin",
   "url": "https://mineskin.org"
 }
+
 
     </script>
 </head>
@@ -73,7 +71,6 @@
                 <h2 style="color:red;">Please enable Javascript to use this website!</h2>
             </noscript>
             <h3 class="text-muted">Dynamic page is loading...</h3>
-            <?php include("pages/generator.html"); ?>
         </div>
     </div>
 </div>
@@ -103,6 +100,7 @@
 <script src="https://platform.twitter.com/widgets.js"></script>
 
 <script src="/js/ng-file-upload.min.js"></script>
+<script src="/js/update-meta.min.js"></script>
 
 <?php
 echo '<script src="/script.min.js?' . rand() . '"></script>';
