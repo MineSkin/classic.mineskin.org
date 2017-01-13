@@ -49,7 +49,7 @@
 
     </script>
 </head>
-<body>
+<body ng-cloak>
 
 <div class="container">
     <div class="well clearfix">
