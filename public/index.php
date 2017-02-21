@@ -93,7 +93,7 @@
         </div>
 
         <div class="pull-right">
-            <a href="https://donation.inventivetalent.org/paypal/?item=MineSkin"><img src="https://static.spigotmc.org/img/btn_donate.gif"/></a> | Maintained by <a href="https://inventivetalent.org?ref=MineSkin">inventivetalent</a> | <a href="http://status.mineskin.org/?aff=38996" title="Website Uptime Monitoring"><img
+            <a href="https://donation.inventivetalent.org/paypal/?item=MineSkin"><img src="https://static.spigotmc.org/img/btn_donate.gif"/></a> | Maintained by <a href="https://inventivetalent.org/?utm_source=mineskin&utm_medium=author_link">inventivetalent</a> | <a href="http://status.mineskin.org/?aff=38996" title="Website Uptime Monitoring"><img
                     src="https://www.statuscake.com/App/button/index.php?Track=oNgPjMzeYP&Days=7&Design=5"/></a>
         </div>
     </div>
