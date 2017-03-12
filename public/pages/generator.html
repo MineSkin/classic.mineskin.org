@@ -7,24 +7,31 @@
 <div>
     <h3>Select Skin</h3>
 
-    <div ng-show="!skinUpload && !skinUser">
-        <br/>
-        <label for="skinUrl" class="required-label">Image URL</label>
-        <input type="url" id="skinUrl" class="form-control" ng-model="skinUrl" ng-required="!skinUpload && !skinUser">
-    </div>
-    <div ng-show="!skinUrl && !skinUser">
-        <br/>
-        <label for="skinUpload" class="required-label">Upload Image</label>
-        <!--<input type="file" id="skinUpload" class="form-control" ng-model="skinUpload" ng-required="!skinUrl && !skinUser">-->
-        <div ngf-drop ng-model="skinUpload" class="drop-box">
-            <button type="file" ngf-select class="btn" id="skinUpload" name="file" ng-model="skinUpload" ngf-pattern="'image/png'" ngf-accept="'image/png'" ngf-max-size="16KB" ngf-min-width="64" ngf-min-height="32">Select File</button>
+    <form name="uploadForm">
+
+        <div ng-show="!skinUpload && !skinUser">
             <br/>
-            <div ng-show="skinUpload" style="padding-top: 4px;">
-                <img ngf-thumbnail="skinUpload" class="thumb">
-                <button class="btn btn-danger" ng-click="skinUpload=null;">X</button>
+            <label for="skinUrl" class="required-label">Image URL</label>
+            <input type="url" id="skinUrl" class="form-control" ng-model="skinUrl" ng-required="!skinUpload && !skinUser">
+        </div>
+        <div ng-show="!skinUrl && !skinUser">
+            <br/>
+            <label for="skinUpload" class="required-label">Upload Image</label>
+            <!--<input type="file" id="skinUpload" class="form-control" ng-model="skinUpload" ng-required="!skinUrl && !skinUser">-->
+            <div ngf-drop ng-model="skinUpload" class="drop-box">
+                <button type="file" ngf-select class="btn" id="skinUpload" name="file" ng-model="skinUpload" ngf-pattern="'image/png'" ngf-accept="'image/png'" ngf-max-size="16KB" ngf-dimensions="$width == 64 && ($height == 32 || $height == 64)" ngf-run-all-validations="true" ngf-model-options="{allowInvalid: true}">Select File</button>
+                <br/>
+                <div ng-show="skinUpload" style="padding-top: 4px;">
+                    <img ngf-thumbnail="skinUpload" class="thumb">
+                    <button class="btn btn-danger" ng-click="skinUpload=null;">X</button>
+                </div>
+                <ul ng-show="uploadForm.file.$invalid">
+                    <li ng-show="uploadForm.file.$error.dimensions">Image dimensions are {{ skinUpload.$ngfWidth }}x{{ skinUpload.$ngfHeight }}, must be either 64x32 or 64x64</li>
+                    <li ng-show="uploadForm.file.$error.maxSize">Image size is {{ skinUpload.size / 1000 | number: 1 }} KB, must be at most 16 KB</li>
+                </ul>
             </div>
         </div>
-    </div>
+    </form>
     <div ng-show="!skinUrl && !skinUpload">
         <br/>
         <label for="skinUser" class="required-label">Minecraft Username</label>
@@ -63,7 +70,7 @@
             <a href="https://twitter.com/share" data-show-count="false" twitter></a>
         </div>
 
-        <button class="btn btn-success" ng-disabled="generatorTimeout > 0 || (!skinUrl && !skinUpload && !skinUser)" ng-click="generate()">Generate!</button>
+        <button class="btn btn-success" ng-disabled="generatorTimeout > 0 || (!skinUrl && (!skinUpload || uploadForm.file.$invalid) && !skinUser)" ng-click="generate()">Generate!</button>
         <span class="help-block" ng-show="generatorTimeout > 0">Please wait {{generatorTimeout}} more second(s)...</span>
     </div>
 
