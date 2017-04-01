@@ -100,7 +100,7 @@ mineskinApp.controller("generatorController", ["$scope", "Upload", "$location", 
         console.log($scope.skinUser);
 
         if ($scope.skinUrl) {
-            var genAlert = $scope.addAlert("Generating Skin from URL...", "info", 10000);
+            var genAlert = $scope.addAlert("Generating Skin from URL...", "info", 15000);
             setTimeout(function () {
                 $http({
                     url: apiBaseUrl + "/generate/url?url=" + $scope.skinUrl + "&name=" + $scope.skinName + "&model=" + $scope.skinModel + "&visibility=" + ($scope.privateUpload ? 1 : 0),
@@ -118,7 +118,7 @@ mineskinApp.controller("generatorController", ["$scope", "Upload", "$location", 
                 });
             }, 500);
         } else if ($scope.skinUpload) {
-            var genAlert = $scope.addAlert("Uploading Skin...", "info", 10000);
+            var genAlert = $scope.addAlert("Uploading Skin...", "info", 15000);
             setTimeout(function () {
                 Upload.upload({
                     url: apiBaseUrl + "/generate/upload?name=" + $scope.skinName + "&model=" + $scope.skinModel + "&visibility=" + ($scope.privateUpload ? 1 : 0),
@@ -140,7 +140,7 @@ mineskinApp.controller("generatorController", ["$scope", "Upload", "$location", 
             var skinUuid;
 
             function generateUser(uuid) {
-                var genAlert = $scope.addAlert("Loading skin data...", "info", 10000);
+                var genAlert = $scope.addAlert("Loading skin data...", "info", 15000);
                 setTimeout(function () {
                     $http({
                         url: apiBaseUrl + "/generate/user/" + uuid + "?name=" + $scope.skinName + "&model=" + $scope.skinModel + "&visibility=" + ($scope.privateUpload ? 1 : 0),
