@@ -69,6 +69,9 @@ mineskinApp.config(function ($routeProvider, $locationProvider) {
             templateUrl: "/pages/gallery.html",
             controller: "galleryController"
         })
+        .when("/stats", {
+            templateUrl: "/pages/stats.html"
+        })
         .when("/:id", {
             templateUrl: "/pages/view.html",
             controller: "viewController"
@@ -373,8 +376,13 @@ mineskinApp.controller("skinController", ["$scope", "$timeout", "$location", "$h
         delay: 0
     };
     $scope.refreshStats = function () {
+        console.log($location.path())
+        var statsUrl = apiBaseUrl + "/get/stats";
+        if ($location.path() == "/stats") {
+            statsUrl += "/details";
+        }
         $http({
-            url: apiBaseUrl + "/get/stats",
+            url: statsUrl,
             method: "GET"
         }).then(function (response) {
             $scope.safeApply(function () {
