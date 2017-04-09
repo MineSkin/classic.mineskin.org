@@ -19,7 +19,7 @@
             <label for="skinUpload" class="required-label">Upload Image</label>
             <!--<input type="file" id="skinUpload" class="form-control" ng-model="skinUpload" ng-required="!skinUrl && !skinUser">-->
             <div ngf-drop ng-model="skinUpload" class="drop-box">
-                <button type="file" ngf-select class="btn" id="skinUpload" name="file" ng-model="skinUpload" ngf-pattern="'image/png'" ngf-accept="'image/png'" ngf-max-size="16KB" ngf-dimensions="$width == 64 && ($height == 32 || $height == 64)" ngf-run-all-validations="true" ngf-model-options="{allowInvalid: true}">Select File</button>
+                <button type="file" ngf-select class="btn" id="skinUpload" name="file" ng-model="skinUpload" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="16KB" ngf-dimensions="$width == 64 && ($height == 32 || $height == 64)" ngf-run-all-validations="true" ngf-model-options="{allowInvalid: true}" ngf-resize="{type: 'image/png', restoreExif: false}">Select File</button>
                 <br/>
                 <div ng-show="skinUpload" style="padding-top: 4px;">
                     <img ngf-thumbnail="skinUpload" class="thumb">
@@ -28,6 +28,7 @@
                 <ul ng-show="uploadForm.file.$invalid">
                     <li ng-show="uploadForm.file.$error.dimensions">Image dimensions are {{ skinUpload.$ngfWidth }}x{{ skinUpload.$ngfHeight }}, must be either 64x32 or 64x64</li>
                     <li ng-show="uploadForm.file.$error.maxSize">Image size is {{ skinUpload.size / 1000 | number: 1 }} KB, must be at most 16 KB</li>
+                    <li ng-show="uploadForm.file.$error.pattern">Could not convert image {{ skinUpload.name }} to a PNG: Invalid image type '{{ skinUpload.name.split(".")[1] }}'</li>
                 </ul>
             </div>
         </div>
