@@ -310,8 +310,15 @@ mineskinApp.controller("galleryController", ["$scope", "$routeParams", "$locatio
     };
 }]);
 
-mineskinApp.controller("viewController", ["$scope", "$routeParams", "$location", "$http", "$cookies", function ($scope, $routeParams, $location, $http, $cookies) {
+mineskinApp.controller("viewController", ["$scope", "$routeParams", "$location", "$http", "$cookies", "$timeout", function ($scope, $routeParams, $location, $http, $cookies, $timeout) {
     $scope.skin = undefined;
+    $scope.skinRotation = 35;
+    $scope.skinImageLoaded = false;
+    $("#skinImage").on("load", function () {
+        $timeout(function () {
+            $scope.skinImageLoaded = true;
+        })
+    });
     $http({
         url: apiBaseUrl + "/get/id/" + $routeParams.id,
         method: "GET"
