@@ -45,11 +45,6 @@
   "name": "MineSkin",
   "url": "https://mineskin.org"
 }
-
-
-
-
-
     </script>
 </head>
 <body ng-cloak>
