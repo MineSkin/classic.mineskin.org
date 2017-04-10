@@ -108,6 +108,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.1.1/ui-bootstrap-tpls.min.js" integrity="sha384-WtvotrktirgylB2PB0Rmy8GyjqcT3ho9v1cyvjNZYLj8KZC1bsjfE8S4pniiFqyZ" crossorigin="anonymous"></script>
 <script src="https://anglibs.github.io/angular-location-update/angular-location-update.min.js" integrity="sha384-jwZhTNLxbFFhAc5v2tYH1/sMFcN13k0/TzlpdIqnf2aAxpzbRJyn1yqt+FiDbJ5C" crossorigin="anonymous"></script>
 <script src="https://platform.twitter.com/widgets.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.6.0/clipboard.min.js"></script>
 
 <script src="/js/ng-file-upload.min.js"></script>
 <script src="/js/update-meta.min.js"></script>
