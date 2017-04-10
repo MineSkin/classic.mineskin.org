@@ -80,7 +80,7 @@
     </div>
 </div>
 
-<footer class="footer" ng-init="refreshStats()">
+<footer class="footer" ng-init="refreshStats()" style="padding-bottom: 20px;">
     <br/>
     <div class="container">
         <div class="pull-left">
