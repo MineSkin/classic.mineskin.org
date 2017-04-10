@@ -125,14 +125,14 @@ skin{{skin.id}}.getProperties().put("textures", new Property(
     var clipboard = new Clipboard('.btn');
 
     function setTooltip(btn, message) {
-        $(btn).tooltip('hide')
-                .attr('data-original-title', message)
+        $(btn).attr('data-original-title', message)
                 .tooltip('show');
     }
 
     function hideTooltip(btn) {
         setTimeout(function () {
-            $(btn).tooltip('hide');
+            $(btn).tooltip('hide')
+                    .attr('data-original-title', "");
         }, 1000);
     }
 
