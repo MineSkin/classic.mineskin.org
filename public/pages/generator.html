@@ -1,5 +1,5 @@
 <div class="pull-right">
-    <button class="btn btn-primary" ng-click="navigateTo('/gallery')">Explore the Gallery</button>
+    <button class="btn btn-primary" ng-click="navigateTo('/gallery')"><i class="fa fa-files-o" aria-hidden="true"></i>&nbsp; Explore the Gallery</button>
 </div>
 
 <h2>Generate New</h2>
@@ -11,15 +11,15 @@
 
         <div ng-show="!skinUpload && !skinUser">
             <br/>
-            <label for="skinUrl" class="required-label">Image URL</label>
+            <label for="skinUrl" class="required-label"><i class="fa fa-link" aria-hidden="true"></i>&nbsp; Image URL</label>
             <input type="url" id="skinUrl" class="form-control" ng-model="skinUrl" ng-required="!skinUpload && !skinUser">
         </div>
         <div ng-show="!skinUrl && !skinUser">
             <br/>
-            <label for="skinUpload" class="required-label">Upload Image</label>
+            <label for="skinUpload" class="required-label"><i class="fa fa-file-image-o" aria-hidden="true"></i>&nbsp; Upload Image</label>
             <!--<input type="file" id="skinUpload" class="form-control" ng-model="skinUpload" ng-required="!skinUrl && !skinUser">-->
             <div ngf-drop ng-model="skinUpload" class="drop-box">
-                <button type="file" ngf-select class="btn" id="skinUpload" name="file" ng-model="skinUpload" ngf-pattern="'image/png'" ngf-accept="'image/png'" ngf-max-size="16KB" ngf-dimensions="$width == 64 && ($height == 32 || $height == 64)" ngf-run-all-validations="true" ngf-model-options="{allowInvalid: true}">Select File</button>
+                <button type="file" ngf-select class="btn" id="skinUpload" name="file" ng-model="skinUpload" ngf-pattern="'image/png'" ngf-accept="'image/png'" ngf-max-size="16KB" ngf-dimensions="$width == 64 && ($height == 32 || $height == 64)" ngf-run-all-validations="true" ngf-model-options="{allowInvalid: true}"><i class="fa fa-file-image-o" aria-hidden="true"></i>&nbsp; Select File</button>
                 <br/>
                 <div ng-show="skinUpload" style="padding-top: 4px;">
                     <img ngf-thumbnail="skinUpload" class="thumb">
@@ -34,7 +34,7 @@
     </form>
     <div ng-show="!skinUrl && !skinUpload">
         <br/>
-        <label for="skinUser" class="required-label">Minecraft Username</label>
+        <label for="skinUser" class="required-label"><i class="fa fa-user" aria-hidden="true"></i>&nbsp; Minecraft Username</label>
         <input type="text" id="skinUser" class="form-control" ng-model="skinUser" ng-required="!skinUrl && !skinUpload" ng-minlength="4" ng-maxlength="36" ng-change="skinName = skinUser">
     </div>
 </div>
@@ -56,7 +56,7 @@
     <br/>
     <div>
         <input type="checkbox" id="privateUpload" ng-model="privateUpload">
-        <label for="privateUpload">Private</label>
+        <label for="privateUpload"><i class="fa fa-eye-slash" aria-hidden="true"></i>&nbsp; Private</label>
         <span class="help-block">The skin won't be visible in the gallery</span>
     </div>
 
