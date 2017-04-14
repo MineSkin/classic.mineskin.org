@@ -36,6 +36,7 @@
 
     <meta name=viewport content="width=device-width, initial-scale=1">
 
+    <meta name="fragment" content="!">
     <base href="/">
 
     <script type='application/ld+json'>
