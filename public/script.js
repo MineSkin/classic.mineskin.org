@@ -310,7 +310,7 @@ mineskinApp.controller("galleryController", ["$scope", "$routeParams", "$locatio
     };
 }]);
 
-mineskinApp.controller("viewController", ["$scope", "$routeParams", "$location", "$http", "$cookies", "$timeout", function ($scope, $routeParams, $location, $http, $cookies, $timeout) {
+mineskinApp.controller("viewController", ["$scope", "$routeParams", "$location", "$http", "$cookies", "$timeout", "$filter", function ($scope, $routeParams, $location, $http, $cookies, $timeout, $filter) {
     $scope.skin = undefined;
     $scope.skinRotation = 35;
     $scope.skinImageLoaded = false;
@@ -328,6 +328,7 @@ mineskinApp.controller("viewController", ["$scope", "$routeParams", "$location",
 
             $scope.head.pageTitle = ($scope.skin.name || '#' + $scope.skin.id) + " | MineSkin";
             $scope.head.pageIcon = apiBaseUrl + "/render/" + $scope.skin.id + "/head";
+            $scope.head.pageDescription = ($scope.skin.name || 'Skin #' + $scope.skin.id) + " generated on " + $filter('date')($scope.skin.timestamp * 1000, "medium") + " by MineSkin.org, the generator for custom skin & skull textures."
 
             $cookies.put("lastSkinId", $scope.skin.id.toString());
         });
