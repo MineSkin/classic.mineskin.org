@@ -13,15 +13,15 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="MineSkin">
     <update-meta property="og:title" content="{{head.pageTitle || 'MineSkin'}}"></update-meta>
-    <meta property="og:image" content="/favicon.png">
-    <update-meta property="og:image" content="{{head.pageIcon || '/favicon.png'}}"></update-meta>
+    <meta property="og:image" content="https://mineskin.org/favicon.png">
+    <update-meta property="og:image" content="{{head.pageIcon || 'https://mineskin.org/favicon.png'}}"></update-meta>
     <meta property="og:description" content="MineSkin.org allows you to generate skin texture data for Minecraft which is signed by Mojang.">
     <update-meta property="og:description" content="{{head.pageDescription}}"></update-meta>
 
     <meta property="twitter:title" content="MineSkin">
     <update-meta property="twitter:title" content="{{head.pageTitle || 'MineSkin'}}"></update-meta>
-    <meta property="twitter:image" content="/favicon.png">
-    <update-meta property="twitter:image" content="{{head.pageIcon || '/favicon.png'}}"></update-meta>
+    <meta property="twitter:image" content="https://mineskin.org/favicon.png">
+    <update-meta property="twitter:image" content="{{head.pageIcon || 'https://mineskin.org/favicon.png'}}"></update-meta>
     <meta property="twitter:description" content="MineSkin.org allows you to generate skin texture data for Minecraft which is signed by Mojang.">
     <update-meta property="twitter:description" content="{{head.pageDescription}}"></update-meta>
     <meta property="twitter:site" content="@MineSkinOrg">

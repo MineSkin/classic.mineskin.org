@@ -82,7 +82,7 @@ mineskinApp.config(function ($routeProvider, $locationProvider) {
 
 mineskinApp.controller("generatorController", ["$scope", "Upload", "$location", "$http", "$timeout", function ($scope, Upload, $location, $http, $timeout) {
     $scope.head.pageTitle = "MineSkin - Custom Skin Generator";
-    $scope.head.pageIcon = "favicon.png";
+    $scope.head.pageIcon = "https://mineskin.org/favicon.png";
 
     $scope.skinUpload = undefined;
     $scope.skinUrl = undefined;
@@ -225,7 +225,7 @@ mineskinApp.controller("generatorController", ["$scope", "Upload", "$location", 
 
 mineskinApp.controller("galleryController", ["$scope", "$routeParams", "$location", "$http", "$cookies", "$window", "$route", function ($scope, $routeParams, $location, $http, $cookies, $window, $route) {
     $scope.head.pageTitle = "Gallery | MineSkin";
-    $scope.head.pageIcon = "favicon.png";
+    $scope.head.pageIcon = "https://mineskin.org/favicon.png";
 
     // To keep track of reloads (new-loads), since the pagination seems to reset the route-param back to its default value
     var newLoad = true;
