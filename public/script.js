@@ -80,7 +80,7 @@ mineskinApp.config(function ($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
 });
 
-mineskinApp.controller("generatorController", ["$scope", "Upload", "$location", "$http", "$timeout", function ($scope, Upload, $location, $http, $timeout) {
+mineskinApp.controller("generatorController", ["$scope", "Upload", "$location", "$http", "$timeout", "$routeParams", function ($scope, Upload, $location, $http, $timeout, $routeParams) {
     $scope.head.pageTitle = "MineSkin - Custom Skin Generator";
     $scope.head.pageIcon = "https://mineskin.org/favicon.png";
 
@@ -194,7 +194,12 @@ mineskinApp.controller("generatorController", ["$scope", "Upload", "$location", 
 
         setTimeout(function () {
             successAlert.close();
-            $location.path("/" + data.id);
+
+            if ($routeParams.callback) {
+                window.location = $routeParams.callback.replace(":id", data.id);
+            } else {
+                $location.path("/" + data.id);
+            }
         }, 1500);
     };
     $scope.generateError = function (message, genAlert) {
