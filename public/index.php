@@ -109,8 +109,6 @@
 <script src="/js/ng-file-upload.min.js"></script>
 <script src="/js/update-meta.min.js"></script>
 
-<?php
-echo '<script src="/script.min.js?' . rand() . '"></script>';
-?>
+<script src="/script.min.js"></script>
 </body>
 </html>
